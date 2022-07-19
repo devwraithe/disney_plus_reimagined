@@ -2,6 +2,7 @@ import 'package:disney_plus_reimagined/view/shared/colors.dart';
 import 'package:disney_plus_reimagined/view/shared/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../shared/routes.dart' as routes;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -104,13 +105,21 @@ class _HomeState extends State<Home> {
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.only(left: 13, right: 20),
                   itemBuilder: (BuildContext context, int index) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(14),
-                      child: Image.network(
-                        "https://wallpapercave.com/wp/wp4916165.jpg",
-                        width: 120,
-                        height: 180,
-                        fit: BoxFit.cover,
+                    return GestureDetector(
+                      onTap: () => {
+                        Navigator.pushNamed(
+                          context,
+                          routes.movie,
+                        ),
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(14),
+                        child: Image.network(
+                          "https://wallpapercave.com/wp/wp4916165.jpg",
+                          width: 120,
+                          height: 180,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   },

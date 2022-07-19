@@ -17,21 +17,37 @@ class CustomIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
-      decoration: BoxDecoration(
-        color: background,
-        borderRadius: BorderRadius.circular(50),
-      ),
-      child: IconButton(
-        padding: padding ?? EdgeInsets.zero,
-        icon: SvgPicture.asset(
+    // return Ink(
+    //   decoration: BoxDecoration(
+    //     color: background,
+    //     borderRadius: BorderRadius.circular(50),
+    //   ),
+    //   child: IconButton(
+    //     padding: padding ?? EdgeInsets.zero,
+    //     icon: SvgPicture.asset(
+    //       icon,
+    //       width: 22,
+    //       height: 22,
+    //       color: iconColor ?? DPColors.white,
+    //     ),
+    //     iconSize: 22,
+    //     onPressed: () => {},
+    //   ),
+    // );
+
+    return GestureDetector(
+      child: Container(
+        padding: padding ?? const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: background ?? DPColors.gray50,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: SvgPicture.asset(
           icon,
-          width: 22,
-          height: 22,
+          width: 24,
+          height: 24,
           color: iconColor ?? DPColors.white,
         ),
-        iconSize: 22,
-        onPressed: () => {},
       ),
     );
   }

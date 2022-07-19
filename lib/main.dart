@@ -23,6 +23,21 @@ class DisneyPlus extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "SFProDisplay",
         visualDensity: VisualDensity.comfortable,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: DPColors.white,
+            elevation: 0,
+            minimumSize: const Size(
+              double.infinity,
+              62,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                14,
+              ),
+            ),
+          ),
+        ),
         textTheme: const TextTheme(
           headline1: TextStyle(
             fontSize: 41.05,
